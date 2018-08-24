@@ -1,0 +1,10 @@
+ersion: '3'
+services:
+  sampleapp:
+    build: .
+    command: tail -f /dev/null
+    container_name: sample-app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
