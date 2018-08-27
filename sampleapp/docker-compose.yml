@@ -1,10 +1,20 @@
-ersion: '3'
+version: '3'
 services:
-  sampleapp:
+  db:
+    image: mysql:5.6
+    container_name: sample-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: sampledb
+      MYSQL_ROOT_PASSWORD: password
+  server:
     build: .
     command: tail -f /dev/null
-    container_name: sample-app
+    container_name: sample-server
     volumes:
       - .:/app
     ports:
       - "3000:3000"
+    links:
+      - db
