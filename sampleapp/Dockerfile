@@ -15,3 +15,5 @@ ADD Gemfile $ROOT_PATH/Gemfile
 ADD Gemfile.lock $ROOT_PATH/Gemfile.lock
 RUN gem install bundler
 RUN bundle install --jobs=4
+
+ADD . $ROOT_PATH/

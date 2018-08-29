@@ -12,8 +12,6 @@ services:
     build: .
     command: tail -f /dev/null
     container_name: sample-server
-    volumes:
-      - .:/app
     ports:
       - "3000:3000"
     links:
